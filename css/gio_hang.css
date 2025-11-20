@@ -1,0 +1,233 @@
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title-menu {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.section-title-menu h2 {
+    font-size: 2rem;
+    color: var(--primary-dark);
+}
+.section-title-menu p {
+    color: var(--dark);
+    margin-top: 5px;
+}
+
+
+/* --- KHUNG CHỨA GIỎ HÀNG VÀ TÓM TẮT --- */
+.cart-container {
+    background-color: #db665d; 
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin: 2rem 0;
+}
+
+/* --- MỤC HÀNG TRONG GIỎ HÀNG --- */
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.cart-item {
+    display: grid;
+    /* 5 cột: Ảnh (100px) | Chi tiết (1fr) | Điều khiển SL (auto) | Giá tổng (auto) | Xóa (auto) */
+    grid-template-columns: 100px 1fr 120px 150px 50px; 
+    
+    background-color: white;
+    gap: 20px;
+    align-items: center; 
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #f0f0f0; 
+}
+
+/* --- Cột 1: Ảnh --- */
+.cart-item-img {
+    width: 100px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Cột 2: Chi tiết Tên & Giá Đơn vị --- */
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 5px;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.cart-item-price {
+    color: var(--primary); 
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* --- Cột 3: Điều khiển Số lượng --- */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc; 
+    color: var(--dark); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #ddd; 
+    transform: scale(1.05); 
+}
+
+.quantity {
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 30px; /* Chiều rộng cố định cho số lượng */
+    text-align: center;
+}
+
+/* --- Cột 4: Giá tổng của Item --- */
+.cart-item-subtotal {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    text-align: right;
+}
+
+/* --- Cột 5: Nút Xóa --- */
+.remove-item {
+    color: var(--danger); 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    justify-self: end; /* Đẩy nút xóa về phía cuối cột */
+}
+
+.remove-item:hover {
+    color: #c0392b; 
+}
+
+/* ========================================================= */
+/* TÓM TẮT GIỎ HÀNG (Cart Summary) */
+/* ========================================================= */
+.cart-summary {
+    /* Đảm bảo nền của phần tổng tiền khớp với nền cart-container */
+    background-color: var(--bg-color); 
+    color: var(--light-text); /* Màu chữ trắng/sáng */
+    margin-top: 30px;
+    padding: 20px 30px;
+    /* Xóa border-top cũ vì nền đã đồng nhất */
+    border-top: none; 
+    text-align: right;
+    /* Căn giữa dọc và ngang cho phần tổng cộng */
+    padding-bottom: 20px; 
+}
+
+.cart-total {
+    font-size: 1.3rem;
+    /* margin-bottom: 20px; */
+    font-weight: 500; /* Độ đậm vừa phải cho chữ "Tổng cộng" */
+}
+
+.cart-total span {
+    /* Điều chỉnh lại cho phù hợp với nền đỏ */
+    color: var(--light-text); 
+    font-weight: 700;
+    font-size: 1.8rem; /* Lớn hơn để nổi bật */
+    margin-left: 10px;
+}
+
+/* ========================================================= */
+/* CÁC NÚT HÀNH ĐỘNG (Actions Buttons) - Đã đổi tên lớp */
+/* ========================================================= */
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Base style cho tất cả các nút */
+.cart-actions button {
+    padding: 10px 20px;
+    border-radius: 6px; 
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent; /* Viền trong suốt mặc định */
+    transition: all 0.2s ease;
+}
+
+
+/* 1. Nút "Tiếp tục mua hàng" (Outline) */
+.cart-btn-shopping {
+    background: #e5e91d; /* Nền trắng */
+    color: #000000; /* Chữ đen */
+    border-color: #ddd; 
+}
+
+.cart-btn-shopping:hover {
+    background: #8eb10f;
+}
+
+/* 2. Nút "Thanh toán" (Primary) - Nổi bật nhất */
+.cart-btn-checkout {
+    background: #024ae6; 
+    color: #FFFFFF;
+    border-color: #FF6347;
+}
+
+.cart-btn-checkout:hover {
+    background: #022f91; /* Cam đậm hơn */
+    border-color: #FF4500;
+}
+
+/* 3. Nút "Xóa giỏ hàng" (Danger) */
+.cart-btn-clear {
+    background: #E74C3C;
+    color: #FFFFFF;
+    border-color: #E74C3C;
+}
+
+.cart-btn-clear:hover {
+    background: #c0392b; 
+    border-color: #c0392b;
+}
+
+/* Đảm bảo icon thùng rác có màu trắng trên nền đỏ */
+.cart-btn-clear i {
+    color: #FFFFFF;
+    margin-right: 5px;
+}

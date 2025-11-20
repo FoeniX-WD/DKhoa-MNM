@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manwah - Tinh Hoa Lẩu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body class="login-page"> <!-- ĐÃ THÊM CLASS login-page -->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../image/logo manwah.png" alt="Logo Manwah"></a>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Trang Chủ</a></li>
+                <!-- THAY ĐỔI: Đã sửa lại cấu trúc Dropdown -->
+                <li class="has-dropdown">
+                    <a href="menu.html">Thực đơn</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="menu.html">
+                                <i class="fas fa-hot-tub" style="margin-right: 8px;"></i> Lẩu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="thuc_don_combo.html">
+                                <i class="fas fa-gift" style="margin-right: 8px;"></i> Set Combo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="thuc_don_ankem.html">
+                                <i class="fas fa-carrot" style="margin-right: 8px;"></i> Món Ăn Kèm
+                            </a>
+                        </li>
+                        <li>
+                            <a href="thuc_don_trangmieng.html">
+                                <i class="fas fa-ice-cream" style="margin-right: 8px;"></i> Tráng Miệng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="thuc_don_douong.html">
+                                <i class="fas fa-glass-martini-alt" style="margin-right: 8px;"></i> Đồ Uống
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Đặt bàn</a></li>
+                <li><a href="#">Khuyến Mãi</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <div class="icon">
+                <a href="login.html" class="account-link">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+            <div class="cart">
+                <a href="gio_hang.html" class="giohang-link">
+                    <span class="icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <span class="cart-total">0₫</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="background"></div>
+
+    <div class="login-container">
+        <div class="image-box">
+
+            <img src="../image/lau_login1.png" alt="Hình ảnh minh họa cho trang đăng nhập">
+        </div>
+
+
+        <div class="form-container">
+            <h2>WELCOME BACK</h2>
+            <p class="text-gray-500">Đăng nhập vào tài khoản của bạn!</p>
+
+            <form id="loginForm">
+                <input type="text" id="loginUser" name="username" placeholder="Email hoặc tên người dùng" required>
+
+                <div class="passwor-box">
+                    <input type="password" id="loginPass" name="password" placeholder="••••••••" required>
+                    <span id="togglePassword" class="toggle-password">
+                        <i class="fas fa-eye-slash"></i>
+                    </span>
+                </div>
+
+                <div class="flex items-center remember-forgot-group">
+                    <div class="remember-me-box">
+                        <input id="remember-me" type="checkbox" class="checkbox-remember">
+                        <label for="remember-me">Ghi nhớ tôi?</label>
+                    </div>
+
+                    <a href="#" class="forgot">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" id="loginButton">Đăng nhập</button>
+            </form>
+
+            <div class="or">- Hoặc -</div>
+
+            <div class="social-icons">
+                <img src="../icon/icons8-facebook-logo-30.png" alt="Facebook">
+                <img src="../icon/icons8-google-30 (1).png" alt="Google">
+
+            </div>
+
+            <p class="register-text">
+                Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <img src="../image/logo manwah.png" alt="Logo Manwah">
+            </div>
+            <div>
+                <h5>Chính sách điều khoản</h5>
+                <ul>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Chăm sóc khách hàng</h5>
+                <ul>
+                    <li>
+                        <div class="footer-icons">
+                            <a href="#" class="mail-link">
+                                <!-- Sử dụng icon Fa Mail -->
+                                <i class="fas fa-envelope"></i> phananh.kh@manwah.vn
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer-icons">
+                            <a href="#" class="phone-link">
+                                <!-- Sử dụng icon Fa Phone -->
+                                <i class="fas fa-phone-alt"></i> 0336.XXX.XXX
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.656017006528!2d106.67603266125896!3d10.73797924113211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e1!3m2!1svi!2s!4v1747456585924!5m2!1svi!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-bottom-banquyen">
+            <p>Bản quyền © 2025 Manwah. Đã đăng ký bản quyền.</p>
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0;">
+                <li>Lê Nguyễn Đăng Khoa</li>
+                <li>Nguyễn Thị Tuyết Nhi</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Swiper JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- JS Local -->
+    <script src="../java_script/script.js"></script>
+</body>
+
+</html>

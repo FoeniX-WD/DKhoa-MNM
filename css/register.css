@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 1200px;
+  height: 700px;
+  /* Chiều cao cố định */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: url("/image/lau_dangky.png") no-repeat center center/cover;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  flex-grow: 1;
+
+}
+
+/* Lớp phủ mờ nhẹ */
+.login-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Khung form */
+.form-container {
+  background-color: rgba(223, 213, 213, 0.92);
+  padding: 40px 30px 60px;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-right: 61%;
+  width: 350px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Tiêu đề */
+.form-container h2 {
+  font-family: 'Georgia', serif; 
+  font-weight: 700;
+  font-size: 26px;
+  color: #ff4040;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Ô nhập */
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Nút */
+.form-container button {
+  width: 100%;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #991b1b;
+}
+
+/* Link */
+.form-container p {
+  margin-top: 15px;
+  
+  color: rgb(252, 17, 17);
+}
+
+.form-container a {
+  color: #ce1a1a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.form-container a:hover {
+  color: #500606;
+}
