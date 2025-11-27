@@ -4,7 +4,7 @@ on:
   # Chạy khi có code mới được push vào nhánh master (hoặc main)
   push:
     branches:
-      - master  # ⚠️ Kiểm tra xem nhánh chính của bạn là 'master' hay 'main' nhé!
+      - main  # ⚠️ Kiểm tra xem nhánh chính của bạn là 'master' hay 'main' nhé!
 
 jobs:
   web-deploy:
