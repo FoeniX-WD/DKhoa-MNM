@@ -5,13 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Manwah - Giỏ Hàng</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/gio_hang.css" />
 </head>
@@ -21,17 +16,19 @@
         <div class="logo">
             <a href="../index.html"><img src="../image/logo manwah.png" alt="Logo Manwah"></a>
         </div>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         <nav>
             <ul class="nav-menu">
                 <li><a href="../index.html">Trang Chủ</a></li>
                 <li class="has-dropdown">
-                    <a href="menu.html">Thực đơn</a>
+                    <a href="thucdon.html">Thực đơn <i class="fas fa-chevron-down"
+                            style="font-size: 12px; margin-left: 5px;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="menu.html"><i class="fas fa-hot-tub" style="margin-right: 8px;"></i> Lẩu</a></li>
-                        <li><a href="thuc_don_combo.html"><i class="fas fa-gift" style="margin-right: 8px;"></i> Set Combo</a></li>
-                        <li><a href="thuc_don_ankem.html"><i class="fas fa-carrot" style="margin-right: 8px;"></i> Món Ăn Kèm</a></li>
-                        <li><a href="thuc_don_trangmieng.html"><i class="fas fa-ice-cream" style="margin-right: 8px;"></i> Tráng Miệng</a></li>
-                        <li><a href="thuc_don_douong.html"><i class="fas fa-glass-martini-alt" style="margin-right: 8px;"></i> Đồ Uống</a></li>
+                        <li><a href="thucdon.html#lau">Lẩu & Món Lẻ</a></li>
+                        <li><a href="thucdon.html#buffet">Buffet</a></li>
+                        <li><a href="thucdon.html#setmenu">Set Menu</a></li>
+                        <li><a href="thucdon.html#trangmieng">Tráng Miệng</a></li>
+                        <li><a href="thucdon.html#douong">Đồ Uống</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Đặt bàn</a></li>
@@ -39,45 +36,33 @@
             </ul>
         </nav>
         <div class="icons">
-            <div class="icon">
-                <a href="login.html" class="account-link">
-                    <i class="fas fa-user"></i>
-                </a>
-            </div>
+            <div class="icon"><a href="login.html" class="account-link"><i class="fas fa-user"></i></a></div>
             <div class="cart">
-                <span class="icon">
-                    <a href="gio_hang.html" class="giohang-link">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </span>
-                <span class="cart-count">0</span>
-                <span class="cart-total">0₫</span>
+                <a href="gio_hang.html" class="giohang-link">
+                    <i class="fas fa-shopping-cart"></i><span class="cart-total">0₫</span>
+                </a>
+                <span class="cart-count" style="display:none">0</span>
             </div>
         </div>
     </header>
 
     <section class="container">
-        <div class="section-title-menu">
-            <br><br>
+        <div class="section-title-menu"><br><br>
             <h2>Giỏ Hàng Của Tôi</h2>
             <p>Kiểm tra và chỉnh sửa đơn hàng của bạn</p>
         </div>
-        
         <div class="cart-container">
-            
             <div id="cart-items-container" class="cart-items-list">
                 <p style="text-align: center; color: #fc0000; padding: 50px;">Giỏ hàng của bạn đang trống.</p>
             </div>
-
             <div class="cart-summary">
-                <div class="cart-total">
-                    Tổng cộng: <span id="cart-summary-total">0₫</span>
-                </div>
-                
+                <div class="cart-total">Tổng cộng: <span id="cart-summary-total">0₫</span></div>
                 <div class="cart-actions">
-                    <button class="cart-btn-shopping" onclick="window.location.href='menu'">Tiếp tục mua hàng</button>
+                    <button class="cart-btn-shopping" onclick="window.location.href='thucdon.html'">Tiếp tục mua
+                        hàng</button>
                     <button class="cart-btn-checkout" onclick="checkout()">Thanh toán</button>
-                    <button class="cart-btn-clear" onclick="clearCart()"><i class="fas fa-trash"></i> Xóa giỏ hàng</button>
+                    <button class="cart-btn-clear" onclick="clearCart()"><i class="fas fa-trash"></i> Xóa giỏ
+                        hàng</button>
                 </div>
             </div>
         </div>
@@ -85,53 +70,30 @@
 
     <footer class="footer">
         <div class="footer-grid">
+            <div class="footer-logo"><img src="../image/logo manwah.png" alt="Logo"></div>
             <div>
-                <img src="../image/logo manwah.png" alt="Logo Manwah">
-            </div>
-            <div>
-                <h5>Chính sách điều khoản</h5>
+                <h5>Chính sách</h5>
                 <ul>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản</a></li>
+                    <li><a href="#">Bảo mật</a></li>
                 </ul>
             </div>
             <div>
-                <h5>Chăm sóc khách hàng</h5>
+                <h5>CSKH</h5>
                 <ul>
-                    <li>
-                        <div class="footer-icons">
-                            <a href="#" class="mail-link">
-                                <i class="fas fa-envelope"></i> phananh.kh@manwah.vn
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="footer-icons">
-                            <a href="#" class="phone-link">
-                                <i class="fas fa-phone-alt"></i> 0336.XXX.XXX
-                            </a>
-                        </div>
-                    </li>
+                    <li><a href="#">1900 6622</a></li>
+                    <li><a href="#">19 Cao Thắng</a></li>
                 </ul>
             </div>
-            <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.656017006528!2d106.67603266125896!3d10.73797924113211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e1!3m2!1svi!2s!4v1747456585924!5m2!1svi!2s"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+            <div class="map"><iframe
+                    src="https://maps.google.com/maps?q=Manwah+Cao+Thang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
         </div>
         <div class="footer-bottom-banquyen">
-            <p>Bản quyền © 2025 Manwah. Đã đăng ký bản quyền.</p>
-            <ul style="list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0;">
-                <li>Lê Nguyễn Đăng Khoa</li>
-                <li>Nguyễn Thị Tuyết Nhi</li>
-            </ul>
+            <p>Bản quyền © 2025 Manwah.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../java_script/script.js"></script>
 </body>
 

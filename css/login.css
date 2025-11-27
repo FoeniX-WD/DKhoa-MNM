@@ -1,285 +1,271 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
-
-/* THAY ĐỔI: Bù trừ chiều cao Header và đảm bảo Form chiếm hết phần còn lại */
-body {
-    background-color: #f5f6fa;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-}
-
-/* THÊM MỚI: Bù trừ Header */
+/* Reset cơ bản cho trang login */
 .login-page {
-    /* Giả định chiều cao Header là khoảng 70px. Thay đổi nếu cần. */
-    padding-top: 80px; 
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-/* --- Khung tổng (Đảm bảo chiếm hết không gian còn lại) --- */
-.login-container {
-    position: relative;
-    width: 90%; 
-    max-width: 1200px;
-    height: 600px; /* Chiều cao cố định */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    margin: auto; 
-    flex-grow: 1; 
+/* Wrapper để căn giữa nội dung login trong phần thân trang */
+.login-wrapper {
+    flex: 1; /* Đẩy footer xuống dưới cùng */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 60px; /* Padding top lớn để tránh Header đè */
 }
 
-/* --- Ảnh minh họa (Nền full container) --- */
+/* Khung chứa chính */
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 550px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+}
+
+/* --- PHẦN ẢNH (BÊN TRÁI/NỀN) --- */
 .image-box {
     width: 100%;
     height: 100%;
-    display: block;
+    position: absolute; /* Để form có thể đè lên nếu cần style overlay */
+    top: 0; left: 0;
 }
 
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    display: block;
+    object-fit: cover;
 }
 
-/* --- Form Đăng nhập (Position: absolute để đặt lên trên ảnh nền) --- */
+/* --- PHẦN FORM (Overlay bên phải) --- */
 .form-container {
-    /* Kích thước Form: Giữ 350px để nhỏ gọn */
-    width: 350px; 
-    max-width: 90%;
     position: absolute;
-    top: 50%; 
-    right: 100px; 
-    /* Dịch chuyển form sang trái 10% và căn giữa dọc */
-    transform: translate(-10%, -50%); 
-
-    /* THAY ĐỔI: Màu nền form hơi đỏ để hòa hợp với nền, nhưng vẫn giữ độ mờ */
-    background-color: rgba(210, 80, 80, 0.9); /* Màu đỏ tối và hơi trong suốt */
-    padding: 30px; 
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    top: 50%;
+    right: 50px; /* Cách lề phải */
+    transform: translateY(-50%);
+    width: 380px;
+    max-width: 90%;
     
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* Hiệu ứng kính mờ (Glassmorphism) trên nền đỏ */
+    background-color: rgba(168, 29, 29, 0.92); 
+    backdrop-filter: blur(5px);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     text-align: center;
-    z-index: 10;
+    color: #fff;
+    z-index: 2;
 }
 
-h2 {
-    /* THAY ĐỔI: Chữ màu trắng để tương phản tốt trên nền đỏ */
-    color: #ffffff; 
+.form-container h2 {
+    font-size: 28px;
+    font-weight: 800;
     margin-bottom: 5px;
-    font-family: 'Georgia', serif; 
-    font-size: 28px; 
-    font-weight: 700;
     letter-spacing: 1px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.text-gray-500 { 
-    /* THAY ĐỔI: Chữ màu trắng/hồng nhạt */
-    color: #ffcccc; 
-    font-size: 15px;
-    margin-bottom: 25px; 
-}
-
-/* --- Form elements --- */
-#loginForm {
-    width: 100%;
-}
-
-/* Input Styles */
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    /* THAY ĐỔI: Bỏ viền input cho form màu đỏ */
-    border: none; 
-    /* THAY ĐỔI: Nền trắng tinh để nổi bật */
-    background-color: #ffffff; 
-    margin-bottom: 15px; 
-    outline: none;
+.sub-text {
     font-size: 14px;
-    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    color: #ffcccc;
 }
 
-input:focus {
-    /* THAY ĐỔI: Hiệu ứng focus */
-    box-shadow: 0 0 0 2px #ffcccc; 
-}
-
-/* Password Box (Để chứa input và toggle icon) */
-.passwor-box {
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
     position: relative;
 }
-.toggle-password {
+
+.form-container input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-container input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Toggle Password Icon */
+.toggle-icon {
     position: absolute;
     right: 15px;
     top: 50%;
-    transform: translateY(-75%);
+    transform: translateY(-50%);
+    color: #888;
     cursor: pointer;
-    color: #999999; 
-    transition: color 0.2s;
-}
-.toggle-password:hover {
-    color: #b22222;
+    font-size: 14px;
 }
 
-
-/* Remember Me & Forgot Password Group */
+/* Remember & Forgot */
 .remember-forgot-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-bottom: 15px; 
     font-size: 13px;
-    color: #ffcccc; 
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-.remember-me-box label,
+.remember-me-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember-me-box input {
+    width: auto;
+    margin: 0;
+}
+
 .forgot {
-    color: #ffcccc; 
+    color: #ffcccc;
     text-decoration: none;
-    transition: color 0.2s;
-}
-
-.remember-me-box label {
-    margin-left: 5px;
-    cursor: pointer;
+    transition: 0.2s;
 }
 
 .forgot:hover {
-    color: #ffffff;
+    color: #fff;
     text-decoration: underline;
 }
 
-/* Divider (Or) */
-.or {
-    display: flex;
-    align-items: center;
+/* Button */
+#loginButton {
     width: 100%;
-    text-align: center;
-    color: #ffcccc; 
-    margin: 15px 0;
-    font-size: 12px;
-}
-
-.or::before,
-.or::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #ffcccc;
-    margin: 0 10px;
-}
-
-/* --- Social Icons --- */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px; 
-
-}
-
-.social-icons img {
-    width: 32px; 
-    height: 32px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border-radius: 50%;
-    /* border: 2px solid #ffffff;  */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.social-icons img:hover {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* --- Nút Đăng nhập --- */
-#loginButton { 
-    width: 100%;
-    padding: 12px; 
-    background-color: #8b0000; 
-    border: none;
+    padding: 12px;
+    background: #5c0000; /* Đỏ đậm hơn nền form */
     color: #fff;
+    border: none;
     border-radius: 30px;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 5px; 
+    transition: 0.3s;
+    text-transform: uppercase;
 }
 
 #loginButton:hover {
-    background-color: #b22222; 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: #800000;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Đăng ký */
+/* Divider */
+.or-divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #ffcccc;
+    font-size: 12px;
+}
+
+.or-divider::before, .or-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.or-divider span {
+    padding: 0 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Register Link */
 .register-text {
-    margin-top: 15px; 
     font-size: 14px;
-    color: #ffffff; 
 }
+
 .register-text a {
-    color: #c71414; 
-    font-weight: bold;
+    color: #fff;
+    font-weight: 700;
     text-decoration: underline;
 }
+
 .register-text a:hover {
-    text-decoration: underline;
-    color: #6d1717;
+    color: #ffcccc;
 }
 
-
-/* --- Responsive cho điện thoại (Dưới 900px) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
     .login-container {
-        width: 95%;
-        max-width: 400px;
         height: auto;
-        margin: 20px auto;
-    }
-    
-    .image-box {
-        display: none; 
-    }
-    
-    .form-container {
-        position: static; 
-        transform: none; 
-        width: 100%;
-        padding: 30px 20px;
-        background-color: #ffffff;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .form-container h2, 
-    .form-container .text-gray-500,
-    .form-container .remember-forgot-group,
-    .form-container .or,
-    .form-container .register-text {
-        color: #b22222;
-    }
-    
-    .form-container .forgot,
-    .form-container .register-text a {
-        color: #8b0000;
+        min-height: 500px;
+        flex-direction: column;
     }
 
-    .login-page {
-        padding-top: 0; 
+    .image-box {
+        position: relative; /* Không absolute nữa để chiếm chỗ */
+        height: 200px; /* Chiều cao ảnh trên mobile */
+    }
+
+    .form-container {
+        position: relative;
+        top: auto; right: auto; transform: none;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0 0 20px 20px; /* Bo góc dưới */
+        background-color: #fff; /* Đổi sang nền trắng cho dễ nhìn trên mobile */
+        color: #333; /* Đổi chữ thành màu tối */
+        box-shadow: none;
+    }
+
+    /* Đổi màu chữ khi ở giao diện mobile nền trắng */
+    .form-container h2,
+    .remember-forgot-group,
+    .or-divider,
+    .register-text,
+    .sub-text {
+        color: #333;
+    }
+
+    .form-container input {
+        background: #f0f0f0; /* Input tối hơn xíu để nổi trên nền trắng */
+    }
+
+    .forgot, .register-text a {
+        color: #D88E2C; /* Màu cam chủ đạo */
+    }
+
+    .or-divider::before, .or-divider::after {
+        background: #ccc;
+    }
+
+    #loginButton {
+        background: #D88E2C; /* Nút màu cam */
     }
 }

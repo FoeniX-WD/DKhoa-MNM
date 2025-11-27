@@ -5,56 +5,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Manwah - Tinh Hoa Lẩu</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="logo">
-            <a href="index.html"><img src="image/logo manwah.png" alt="Logo Manwah"></a>
+            <a href="index.html"><img src="image/logo manwah.png" alt="Logo Manwah" /></a>
         </div>
+        <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         <nav>
             <ul class="nav-menu">
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li>
-                    <a href="html/menu.html">Thực đơn</a>
+                <li class="active"><a href="index.html">Trang Chủ</a></li>
+                <li class="has-dropdown">
+                    <a href="html/thucdon.html">Thực đơn
+                        <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px"></i></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="html/menu.html">
-                                <i class="fas fa-hot-tub" style="margin-right: 8px;"></i> Lẩu
-                            </a>
-                        </li>
-                        <li>
-                            <a href="thuc_don_combo.html">
-                                <i class="fas fa-gift" style="margin-right: 8px;"></i> Set Combo
-                            </a>
-                        </li>
-                        <li>
-                            <a href="thuc_don_ankem.html">
-                                <i class="fas fa-carrot" style="margin-right: 8px;"></i> Món Ăn Kèm
-                            </a>
-                        </li>
-                        <li>
-                            <a href="thuc_don_trangmieng.html">
-                                <i class="fas fa-ice-cream" style="margin-right: 8px;"></i> Tráng Miệng
-                            </a>
-                        </li>
-                        <li>
-                            <a href="thuc_don_douong.html">
-                                <i class="fas fa-glass-martini-alt" style="margin-right: 8px;"></i> Đồ Uống
-                            </a>
-                        </li>
+                        <li><a href="html/thucdon.html#lau">Lẩu & Món Lẻ</a></li>
+                        <li><a href="html/thucdon.html#buffet">Buffet</a></li>
+                        <li><a href="html/thucdon.html#setmenu">Set Menu</a></li>
+                        <li><a href="html/thucdon.html#trangmieng">Tráng Miệng</a></li>
+                        <li><a href="html/thucdon.html#douong">Đồ Uống</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Đặt bàn</a></li>
@@ -63,65 +38,71 @@
         </nav>
         <div class="icons">
             <div class="icon">
-                <a href="html/login.html" class="account-link">
-                    <i class="fas fa-user"></i>
-                </a>
+                <a href="html/login.html" class="account-link"><i class="fas fa-user"></i></a>
             </div>
             <div class="cart">
-                <span class="icon">
-                    <a href="html/gio_hang.html" class="giohang-link">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </span>
-                <span class="cart-count">0</span>
-                <span class="cart-total">0₫</span>
+                <a href="html/gio_hang.html" class="giohang-link">
+                    <i class="fas fa-shopping-cart"></i><span class="cart-total">0₫</span>
+                </a>
+                <span class="cart-count" style="display: none">0</span>
             </div>
         </div>
     </header>
 
-    <!-- Hero Slider -->
     <section class="hero">
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('image/lau_1.jpg');">
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('image/lau_1.jpg')"></div>
+                    <div class="overlay"></div>
                     <div class="slide-content">
                         <h1>Trải nghiệm tinh hoa lẩu châu Á</h1>
-                        <p>Thưởng thức hương vị độc đáo tại Manwah Nơi kết hợp giữa truyền thống và hiện đại.</p>
+                        <p>
+                            Thưởng thức hương vị độc đáo tại Manwah. Nơi kết hợp giữa truyền
+                            thống và hiện đại.
+                        </p>
                         <a href="#" class="btn">Đặt bàn ngay</a>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('image/lau_2.jpg');">
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('image/lau_2.jpg')"></div>
+                    <div class="overlay"></div>
                     <div class="slide-content">
                         <h1>Lẩu hải sản tươi ngon mỗi ngày</h1>
-                        <p>Nguyên liệu được chọn lọc kỹ lưỡng, mang lại vị ngọt tự nhiên và đậm đà.</p>
-                        <a href="#" class="btn">Khám phá menu</a>
+                        <p>
+                            Nguyên liệu được chọn lọc kỹ lưỡng, mang lại vị ngọt tự nhiên và
+                            đậm đà.
+                        </p>
+                        <a href="html/thucdon.html#lau" class="btn">Khám phá menu</a>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('image/bia_gd.jpg');">
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('image/bia_gd.jpg')"></div>
+                    <div class="overlay"></div>
                     <div class="slide-content">
-                        <h1>Combo gia đình <br>Niềm vui trọn vẹn</h1>
+                        <h1>Combo gia đình <br />Niềm vui trọn vẹn</h1>
                         <p>Cùng nhau thưởng thức bữa lẩu ấm cúng bên người thân yêu.</p>
-                        <a href="#" class="btn">Xem ưu đãi</a>
+                        <a href="html/thucdon.html#setmenu" class="btn">Xem ưu đãi</a>
                     </div>
                 </div>
             </div>
-
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-next" aria-label="Next slide"></div>
-            <div class="swiper-button-prev" aria-label="Previous slide"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
-    <!-- Banner -->
     <section class="banner">
         <div class="banner-text">
             <h2>MỜI BẠN ĐẾN VỚI THẾ GIỚI LẨU</h2>
-            <p>Trải nghiệm ngay các loại nước lẩu tinh hoa cùng nguyên liệu tươi ngon tuyệt hảo.
-                Tận hưởng bữa ăn ấm cúng và trọn vẹn bên gia đình, bạn bè với những ưu đãi chỉ có tại đây!
+            <p>
+                Trải nghiệm ngay các loại nước lẩu tinh hoa cùng nguyên liệu tươi ngon
+                tuyệt hảo. Tận hưởng bữa ăn ấm cúng và trọn vẹn bên gia đình, bạn bè
+                với những ưu đãi chỉ có tại đây!
             </p>
             <a href="#" class="btn">Đặt Bàn Ngay</a>
         </div>
-        <img src="image/dau_bep.png" alt="Banner">
+        <img src="image/dau_bep.png" alt="Banner" />
     </section>
 
     <section class="container">
@@ -130,130 +111,113 @@
             <p>Các món ăn đặc biệt với giá ưu đãi</p>
         </div>
         <div class="menu-container">
-            <!-- Menu Item 1 -->
             <div class="menu-card">
                 <div class="menu-img">
-                    <img src="image/lau_thai.png" alt="Lẩu Thái chua cay">
+                    <img src="image/lau_thai.png" alt="Lẩu Thái" />
                 </div>
                 <div class="menu-content">
                     <h3 class="menu-title">Lẩu Thái Chua Cay</h3>
-                    <p class="menu-description">Nước dùng chua cay đậm đà với đầy đủ hải sản tươi ngon</p>
+                    <p class="menu-description">
+                        Nước dùng chua cay đậm đà với đầy đủ hải sản tươi ngon
+                    </p>
                     <div class="menu-footer">
-                        <span class="menu-price">289.000 VNĐ</span>
-                        <button class="add-to-cart" data-name="Lẩu Thái Chua Cay" data-price="289000"><i
-                                class="fas fa-cart-plus"></i> Thêm</button>
+                        <span class="menu-price">289.000đ</span><button class="add-to-cart"
+                            data-name="Lẩu Thái Chua Cay" data-price="289000">
+                            <i class="fas fa-plus"></i> Thêm
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Menu Item 2 -->
             <div class="menu-card">
                 <div class="menu-img">
-                    <img src="image/lau_nam.png" alt="Lẩu nấm">
+                    <img src="image/lau_nam.png" alt="Lẩu nấm" />
                 </div>
                 <div class="menu-content">
                     <h3 class="menu-title">Lẩu Nấm Thanh Đạm</h3>
-                    <p class="menu-description">Kết hợp từ 5 loại nấm quý với nước dùng rau củ ngọt thanh</p>
+                    <p class="menu-description">
+                        Kết hợp từ 5 loại nấm quý với nước dùng rau củ ngọt thanh
+                    </p>
                     <div class="menu-footer">
-                        <span class="menu-price">219.000 VNĐ</span>
-                        <button class="add-to-cart" data-name="Lẩu Nấm Thanh Đạm" data-price="219000"><i
-                                class="fas fa-cart-plus"></i> Thêm</button>
+                        <span class="menu-price">219.000đ</span><button class="add-to-cart"
+                            data-name="Lẩu Nấm Thanh Đạm" data-price="219000">
+                            <i class="fas fa-plus"></i> Thêm
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Menu Item 3 -->
             <div class="menu-card">
                 <div class="menu-img">
-                    <img src="image/lau_bo_moc_chau.png" alt="Lẩu bò">
+                    <img src="image/lau_bo_moc_chau.png" alt="Lẩu bò" />
                 </div>
                 <div class="menu-content">
                     <h3 class="menu-title">Lẩu Bò Mộc Châu</h3>
-                    <p class="menu-description">Bò tươi nhập trực tiếp từ Mộc Châu, nước dùng nấu từ xương bò 24h</p>
+                    <p class="menu-description">
+                        Bò nhập trực tiếp từ Mộc Châu, nước dùng nấu từ xương bò 24h
+                    </p>
                     <div class="menu-footer">
-                        <span class="menu-price">339.000 VNĐ</span>
-                        <button class="add-to-cart" data-name="Lẩu Bò Mộc Châu" data-price="339000"><i
-                                class="fas fa-cart-plus"></i> Thêm</button>
+                        <span class="menu-price">339.000đ</span><button class="add-to-cart" data-name="Lẩu Bò Mộc Châu"
+                            data-price="339000">
+                            <i class="fas fa-plus"></i> Thêm
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Menu Item 4 -->
             <div class="menu-card">
                 <div class="menu-img">
-                    <img src="image/lau_hai_san.png" alt="Lẩu hải sản">
+                    <img src="image/lau_hai_san.png" alt="Lẩu hải sản" />
                 </div>
                 <div class="menu-content">
                     <h3 class="menu-title">Lẩu Hải Sản</h3>
-                    <p class="menu-description">Tôm, mực, cá, cua tươi sống, nước dùng nấu từ tôm khô và sườn non</p>
+                    <p class="menu-description">
+                        Tôm, mực, cá, cua tươi sống, nước dùng nấu từ tôm khô và sườn non
+                    </p>
                     <div class="menu-footer">
-                        <span class="menu-price">499.000 VNĐ</span>
-                        <button class="add-to-cart" data-name="Lẩu Hải Sản" data-price="499000"><i
-                                class="fas fa-cart-plus"></i> Thêm</button>
+                        <span class="menu-price">499.000đ</span><button class="add-to-cart" data-name="Lẩu Hải Sản"
+                            data-price="499000">
+                            <i class="fas fa-plus"></i> Thêm
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Categories -->
     <section class="categories">
-        <h2 style="text-align: center; margin-bottom: 40px;">Thực đơn</h2>
+        <h2 style="
+          text-align: center;
+          margin-bottom: 40px;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 2.5rem;
+        ">
+            Danh Mục
+        </h2>
         <div class="categories-grid">
-            <div class="category" style="background-image: url('image/bia_lau.jpg');">
+            <div class="category" style="background-image: url('image/bia_lau.jpg')">
                 <div class="category-content">
-                    <h3>Lẩu</h3>
-                    <a href="#" class="btn">Mua ngay</a>
+                    <h3>Lẩu & Món Lẻ</h3>
+                    <a href="html/thucdon.html#lau" class="btn">Xem ngay</a>
                 </div>
             </div>
-            <div class="category" style="background-image: url('image/bia_setlau.jpg');">
+            <div class="category" style="background-image: url('image/bia_setlau.jpg')">
                 <div class="category-content">
                     <h3>Set menu</h3>
-                    <a href="#" class="btn">Mua ngay</a>
+                    <a href="html/thucdon.html#setmenu" class="btn">Xem ngay</a>
                 </div>
             </div>
-            <div class="category" style="background-image: url('image/ly_tra.jpg');">
+            <div class="category" style="background-image: url('image/ly_tra.jpg')">
                 <div class="category-content">
                     <h3>Nước uống</h3>
-                    <a href="#" class="btn">Mua ngay</a>
+                    <a href="html/thucdon.html#douong" class="btn">Xem ngay</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Brands -->
-    <!-- <section class="brands">
-        <h2 class="brands-title">Các mạng xã hội của chúng tôi</h2>
-        <div class="swiper brands-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_2lbuxBaF.svg" alt="Brand 1">
-                </div>
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_Vf3XC9Lm.svg" alt="Brand 2">
-                </div>
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_s271bPFw.svg" alt="Brand 3">
-                </div>
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_0ONBtABh.svg" alt="Brand 4">
-                </div>
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_sS0cnq7r.svg" alt="Brand 5">
-                </div>
-                <div class="swiper-slide brand"><img
-                        src="https://in-jaguar.10web.cloud/wp-content/uploads/2025/09/logo_mncg8xi1.svg" alt="Brand 6">
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
-            <div>
-                <img src="image/logo manwah.png" alt="Logo Manwah">
+            <div class="footer-logo">
+                <img src="image/logo manwah.png" alt="Logo Manwah" />
             </div>
             <div>
                 <h5>Chính sách điều khoản</h5>
@@ -266,27 +230,19 @@
                 <h5>Chăm sóc khách hàng</h5>
                 <ul>
                     <li>
-                        <div class="footer-icons">
-                            <a href="#" class="mail-link">
-                                <i class="fas fa-envelope"></i> phananh.kh@manwah.vn
-                            </a>
-                        </div>
+                        <a href="#" class="mail-link"><i class="fas fa-envelope"></i> phananh.kh@manwah.vn</a>
                     </li>
                     <li>
-                        <div class="footer-icons">
-                            <a href="#" class="phone-link">
-                                <i class="fas fa-phone-alt"></i> 0336.XXX.XXX
-                            </a>
-                        </div>
+                        <a href="#" class="phone-link"><i class="fas fa-phone-alt"></i> 1900 6622</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> 19 Cao Thắng, Q.3, HCM</a>
                     </li>
                 </ul>
             </div>
             <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.656017006528!2d106.67603266125896!3d10.73797924113211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x674d5126513db295!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgU8OgaSBHw7Ju!5e1!3m2!1svi!2s!4v1747456585924!5m2!1svi!2s"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe src="https://maps.google.com/maps?q=Manwah+Cao+Thang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="200" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
         <div class="footer-bottom-banquyen">
@@ -298,9 +254,7 @@
         </div>
     </footer>
 
-    <!-- Swiper JS (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- JS Local -->
     <script src="java_script/script.js"></script>
 </body>
 

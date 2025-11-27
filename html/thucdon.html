@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thực Đơn - Manwah</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/thucdon.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../image/logo manwah.png" alt="Logo Manwah"></a>
+        </div>
+        
+        <div class="mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Trang Chủ</a></li>
+                <li class="active has-dropdown">
+                    <a href="thucdon.html">Thực đơn <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thucdon.html#lau" onclick="location.reload()">Lẩu & Món Lẻ</a></li>
+                        <li><a href="thucdon.html#buffet" onclick="location.reload()">Buffet</a></li>
+                        <li><a href="thucdon.html#setmenu" onclick="location.reload()">Set Menu</a></li>
+                        <li><a href="thucdon.html#trangmieng" onclick="location.reload()">Tráng Miệng</a></li>
+                        <li><a href="thucdon.html#douong" onclick="location.reload()">Đồ Uống</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Đặt bàn</a></li>
+                <li><a href="#">Khuyến Mãi</a></li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <div class="icon">
+                <a href="login.html" class="account-link"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="cart">
+                <a href="giohang.html" class="giohang-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-total">0₫</span>
+                </a>
+                <span class="cart-count" style="display:none">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-container" style="max-width: 1280px; margin: 100px auto 40px; padding: 0 20px; display: flex; gap: 40px;">
+        
+        <aside class="sidebar" style="width: 280px; flex-shrink: 0;">
+            
+            <div class="category-group open">
+                <div class="category-header" onclick="toggleSubMenu(this)">
+                    <span>Món Lẻ</span>
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="active sidebar-item"><a href="#" class="tab-link" data-tab="lau">Lẩu</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="heocuu">Heo - Cừu</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="bo">Bò</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="noitang">Nội Tạng</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="haisan">Hải Sản</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="dauhu">Đậu Hũ & Đồ Viên</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="hacao">Há Cảo & Sủi Cảo</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="raunam">Rau & Nấm</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="my">Mỳ</a></li>
+                </ul>
+            </div>
+
+            <div class="category-group">
+                <div class="category-header" onclick="toggleSubMenu(this)">
+                    <span>Buffet</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="buffet">Buffet Phong Vân</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="buffet">Buffet Đài Ngưu Trân</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="buffet">Buffet Đài Dư Hoa</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="buffet">Buffet Vạn Giai Kỳ</a></li>
+                </ul>
+            </div>
+
+            <div class="category-group">
+                <div class="category-header" onclick="toggleSubMenu(this)">
+                    <span>Set Menu</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="subcategory-list">
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="setmenu">Set Bò Tươi Ngọc Tiên</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="setmenu">Set Bò Tươi Diệu Tiên</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="setmenu">Set Bò Tươi Thượng Tiên</a></li>
+                    <li class="sidebar-item"><a href="#" class="tab-link" data-tab="setmenu">Set Song Vũ</a></li>
+                </ul>
+            </div>
+
+            <div class="category-group">
+                <div class="category-header" onclick="toggleSubMenu(this)">
+                    <span>Tráng Miệng & Đồ Uống</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="subcategory-list">
+                     <li class="sidebar-item"><a href="#" class="tab-link" data-tab="trangmieng">Tráng Miệng</a></li>
+                     <li class="sidebar-item"><a href="#" class="tab-link" data-tab="douong">Đồ Uống</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="menu-content" style="flex: 1;">
+            
+            <div id="tab-lau" class="tab-pane active">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Tinh Hoa Nước Lẩu</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/moc_thanh_tra.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mộc Thanh Trà 1/2 nồi</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/moc_thanh_tra_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mộc Thanh Trà 1/4 nồi</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/dai_bac_ngoc_thach.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Đài Bắc Ngọc Thạch 1/2 nồi</h3><p class="product-price">169.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/dai_bac_ngoc_thach_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Đài Bắc Ngọc Thạch 1/4 nồi</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/mala_hong_ngoc.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mala Hồng Ngọc 1/2 nồi</h3><p class="product-price">169.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/mala_hong_ngoc_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mala Hồng Ngọc 1/4 nồi</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/dai_bac.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Đài Bắc 1/2 nồi</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/dai_bac_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Đài Bắc 1/4 nồi</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/mala.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mala 1/2 nồi</h3><p class="product-price">109.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/mala_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Mala 1/4 nồi</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/kim_chi.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Kim Chi 1/2 nồi</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/kim_chi_14.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Kim Chi 1/4 nồi</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/ca_chua.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Cà Chua 1/2 nồi</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/nam.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Nấm 1/2 nồi</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/lau/thai.jpg" alt="Lẩu"></div><div class="product-info"><h3 class="product-name">Lẩu Thái 1/2 nồi</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-heocuu" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Thịt Heo & Cừu</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/ba_chi_cuu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ba chỉ cừu</h3><p class="product-price">79.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/ma_heo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Má heo</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/bap_heo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bắp heo Mỹ cuộn</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/ba_chi_iberico.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ba chỉ heo Iberico</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/nac_vai_iberico.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nạc vai heo Iberico</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/heocuu/thit_heo_my_vi.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt heo mỹ vị</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-bo" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Thịt Bò Thượng Hạng</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/da_thien_y.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Da Thiên Ý</h3><p class="product-price">249.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/thit_bo_nhu_y.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Như Ý</h3><p class="product-price">179.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/tuyet_lien_hoa.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Tuyết Liên Hoa</h3><p class="product-price">299.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/suon_wagyu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sườn Wagyu Thượng Hạng</h3><p class="product-price">649.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/suon_non_wagyu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sườn Non Bò Wagyu</h3><p class="product-price">469.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/loi_vai_wagyu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Lõi Vai Wagyu</h3><p class="product-price">329.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/bo_wagyu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Wagyu Thượng Hạng</h3><p class="product-price">179.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/bo_van_may.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Vân Mây</h3><p class="product-price">179.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/de_suon.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Dẻ Sườn Ướp Mè Thái Tay</h3><p class="product-price">129.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/bo_my_vi_200.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Mỹ Vị - 200g</h3><p class="product-price">149.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/bo_my_vi_100.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Bò Mỹ Vị - 100g</h3><p class="product-price">79.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/bap_bo_uc_200.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bắp Bò Úc - 200g</h3><p class="product-price">109.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/ba_chi_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ba Chỉ Bò Mỹ - 150g</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/gau_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Gầu Bò Mỹ</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/bo/be_thuong_hang.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bê Thượng Hạng</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-noitang" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Nội Tạng</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/sach_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sách Bò Nâu</h3><p class="product-price">79.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/gion_heo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Giòn Heo</h3><p class="product-price">79.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/oc_heo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Óc Heo</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/to_ong_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Tổ ong bò tàu</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/da_day_heo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Dạ dày heo tàu</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/cuong_tim.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Cuống Tim</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/vo_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Vó bò</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/luoi_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Lưỡi Bò Cuộn</h3><p class="product-price">49.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/gion_san_sat.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Giòn Sần Sật</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/chan_gio.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Chân Giò Tàu</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/noitang/bao_tu_ca.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bao Tử Cá Basa</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-haisan" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Hải Sản Tươi Sống</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/so_diep.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sò Điệp</h3><p class="product-price">239.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/bao_ngu.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bào Ngư Đen</h3><p class="product-price">199.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/vem_xanh.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Vẹm Xanh</h3><p class="product-price">119.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/bach_tuoc.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bạch Tuộc Baby</h3><p class="product-price">109.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/bach_tuoc_co_dai.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bạch Tuộc Cờ Đại</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/oc_bulot.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ốc Bulot Pháp</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/ca_tam.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Cá Tầm</h3><p class="product-price">189.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/ca_mu_do.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Cá Mú Đỏ</h3><p class="product-price">249.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/tom_su_l.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Tôm Sú Tươi size L</h3><p class="product-price">249.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/tom_su_m.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Tôm Sú Tươi size M</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/tom_the.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Tôm Thẻ</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/rau_muc.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Râu Mực Tươi</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/muc_trung.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Mực Trứng</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/thit_ca_hoi.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thịt Cá Hồi</h3><p class="product-price">129.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/haisan/luon_ca_hoi.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Lườn Cá Hồi</h3><p class="product-price">59.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-dauhu" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Đậu Hũ & Đồ Viên</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/ghe_handmade.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ghẹ Handmade</h3><p class="product-price">139.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/thanh_tom_su.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thanh Tôm Sú Cuộn</h3><p class="product-price">109.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/xuc_xich_pho_mai.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Xúc Xích Phô Mai</h3><p class="product-price">99.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/xuc_xich_nam.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Xúc Xích Nấm</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/banh_gao_pho_mai.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bánh Gạo Phô Mai</h3><p class="product-price">45.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/banh_gao_khoai_mon.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bánh Gạo Khoai Môn</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/cha_ca_rong.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Chả Cá Rồng</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/thanh_cua.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Thanh Cua</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/vien_moc_nam.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Viên Mọc Nấm</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/paste_tom.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Paste Tôm</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/dau_hu_pho_mai.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Đậu Hũ Phô Mai</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/dauhu/dau_lanh.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Đậu Lanh Đài Loan</h3><p class="product-price">9.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-hacao" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Há Cảo & Sủi Cảo</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/sui_cao_tam_phuc.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sủi Cảo Tam Phúc</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/sui_cao_ngau_tuong.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Sủi Cảo Ngẫu Tượng</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/ha_cao_tong_hop.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Há Cảo Tổng Hợp</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/ha_cao_tom.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Há Cảo Tôm</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/ha_cao_bo.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Há Cảo Bò</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/hacao/ha_cao_nam.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Há Cảo Nấm Vuốt Hổ Đen</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-raunam" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Rau & Nấm Tươi</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rau_nam_tong_hop.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rau Nấm Tổng Hợp</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rau_tong_hop.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rau Tổng Hợp</h3><p class="product-price">35.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_tong_hop.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Tổng Hợp</h3><p class="product-price">29.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_dong_trung.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Đông Trùng Hạ Thảo</h3><p class="product-price">89.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_nhung_huou.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Nhung Hươu</h3><p class="product-price">79.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_vi_cua.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Vị Cua Trắng</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_vi_cua_nau.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Vị Cua Nâu</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_tram_trang.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Trâm Trắng</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_tien.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Tiên</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/nam_hai_san.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Nấm Hải Sản</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/ngo_ngot.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Ngô Ngọt</h3><p class="product-price">35.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rong_bien.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rong Biển Hàn Quốc</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/khoai_lang.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Khoai Lang Nhật</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/khoai_mon.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Khoai Môn</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/dau_bap.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Đậu Bắp</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rau_diep.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rau Diếp Thơm</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rau_muong.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rau Muống</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/raunam/rau_cai.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Rau Cải Ngọt</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-my" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Các Loại Mỳ</h2>
+                <div class="product-grid">
+                    <div class="product-item"><div class="product-img"><img src="../image/my/my_tuoi.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Mỳ Tươi</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/my/my_trung_khanh.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Mỳ Trùng Khánh</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/my/pho_kho.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Phở Khô</h3><p class="product-price">15.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/my/my_rong_bien.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Mỳ Rong Biển</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                    <div class="product-item"><div class="product-img"><img src="../image/my/banh_da.jpg" alt="Món"></div><div class="product-info"><h3 class="product-name">Bánh Đa Hong Kong</h3><p class="product-price">19.000 ₫</p><button class="btn-add">Thêm</button></div></div>
+                </div>
+            </div>
+
+            <div id="tab-buffet" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Thực Đơn Buffet</h2>
+                <div class="combo-list">
+                    <div class="combo-item">
+                        <div class="combo-img"><img src="../image/buffet_demo.jpg" alt="Buffet"></div>
+                        <div class="combo-info">
+                            <h3 class="combo-name">Buffet Phong Vân</h3>
+                            <p class="combo-desc">Thỏa thích thưởng thức hơn 68 món nhúng đặc sắc.</p>
+                            <ul class="combo-details">
+                                <li><i class="fas fa-check"></i> Thịt Bò & Heo nhập khẩu</li>
+                                <li><i class="fas fa-check"></i> Quầy tráng miệng không giới hạn</li>
+                            </ul>
+                            <div class="combo-bottom"><span class="combo-price">279.000 ₫ <small>/người</small></span><button class="btn-add">Chọn Gói</button></div>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div class="combo-img"><img src="../image/buffet_demo.jpg" alt="Buffet"></div>
+                        <div class="combo-info">
+                            <h3 class="combo-name">Buffet Đài Ngưu Trân</h3>
+                            <p class="combo-desc">Gói buffet cao cấp với nhiều loại thịt bò thượng hạng.</p>
+                             <div class="combo-bottom"><span class="combo-price">329.000 ₫ <small>/người</small></span><button class="btn-add">Chọn Gói</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-setmenu" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Các Set Menu Nổi Bật</h2>
+                <div class="combo-list">
+                    <div class="combo-item">
+                        <div class="combo-img"><img src="../image/set_ngoc_tien.jpg" alt="Set"></div>
+                        <div class="combo-info">
+                            <h3 class="combo-name">Set Bò Tươi Ngọc Tiên</h3>
+                            <p class="combo-desc">4 Loại Bò Tươi: Lõi vai, Diềm thăn, Gầu hoa, Thăn ngoại. Tặng kèm Lẩu 2 vị.</p>
+                            <div class="combo-bottom"><span class="combo-price">450.000 ₫ <small>/combo</small></span><button class="btn-add">Chọn Combo</button></div>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div class="combo-img"><img src="../image/set_dieu_tien.jpg" alt="Set"></div>
+                        <div class="combo-info">
+                            <h3 class="combo-name">Set Bò Tươi Diệu Tiên</h3>
+                            <p class="combo-desc">5 Loại Bò Tươi Đặc Biệt cho nhóm 2-3 người.</p>
+                            <div class="combo-bottom"><span class="combo-price">570.000 ₫ <small>/combo</small></span><button class="btn-add">Chọn Combo</button></div>
+                        </div>
+                    </div>
+                    <div class="combo-item">
+                        <div class="combo-img"><img src="../image/set_thuong_tien.jpg" alt="Set"></div>
+                        <div class="combo-info">
+                            <h3 class="combo-name">Set Bò Tươi Thượng Tiên</h3>
+                            <p class="combo-desc">6 Loại Bò Tươi Thượng Hạng. Trải nghiệm đỉnh cao.</p>
+                            <div class="combo-bottom"><span class="combo-price">750.000 ₫ <small>/combo</small></span><button class="btn-add">Chọn Combo</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="tab-trangmieng" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Tráng Miệng Ngọt Ngào</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <div class="product-img"><img src="../image/trangmieng/kem.jpg" alt="Món"></div>
+                        <div class="product-info"><h3 class="product-name">Kem Fanny Tự Chọn</h3><p class="product-price">39.000 ₫</p><button class="btn-add">Thêm</button></div>
+                    </div>
+                     <div class="product-item">
+                        <div class="product-img"><img src="../image/trangmieng/che.jpg" alt="Món"></div>
+                        <div class="product-info"><h3 class="product-name">Chè Khúc Bạch</h3><p class="product-price">35.000 ₫</p><button class="btn-add">Thêm</button></div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="tab-douong" class="tab-pane">
+                <h2 class="section-title-menu" style="text-align: left; margin-bottom: 20px;">Đồ Uống</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <div class="product-img"><img src="../image/douong/tra_hoa.jpg" alt="Món"></div>
+                        <div class="product-info"><h3 class="product-name">Trà Hoa Cúc Kỷ Tử</h3><p class="product-price">69.000 ₫</p><button class="btn-add">Thêm</button></div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img"><img src="../image/douong/coca.jpg" alt="Món"></div>
+                        <div class="product-info"><h3 class="product-name">Coca Cola Tươi</h3><p class="product-price">25.000 ₫</p><button class="btn-add">Thêm</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="../image/logo manwah.png" alt="Logo Manwah">
+            </div>
+            <div>
+                <h5>Chính sách điều khoản</h5>
+                <ul>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách thanh toán</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Chăm sóc khách hàng</h5>
+                <ul>
+                    <li><a href="#" class="mail-link"><i class="fas fa-envelope"></i> phananh.kh@manwah.vn</a></li>
+                    <li><a href="#" class="phone-link"><i class="fas fa-phone-alt"></i> 1900 6622</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 19 Cao Thắng, Q.3, HCM</a></li>
+                </ul>
+            </div>
+            <div class="map">
+                <iframe src="https://maps.google.com/maps?q=Manwah+Cao+Thang&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom-banquyen">
+            <p>Bản quyền © 2025 Manwah. Đã đăng ký bản quyền.</p>
+            <ul style="list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0;">
+                <li>Lê Nguyễn Đăng Khoa</li>
+                <li>Nguyễn Thị Tuyết Nhi</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../java_script/script.js"></script>
+</body>
+
+</html>

@@ -1,101 +1,217 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+/* --- Reset & Base --- */
+.register-page {
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.login-container {
-  width: 90%;
-  max-width: 1200px;
-  height: 700px;
-  /* Chiều cao cố định */
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: url("/image/lau_dangky.png") no-repeat center center/cover;
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin: auto;
-  flex-grow: 1;
-
+/* Wrapper căn giữa */
+.register-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Padding top đủ lớn để không bị Header che, padding bottom để cách Footer */
+    padding: 120px 20px 60px; 
 }
 
-/* Lớp phủ mờ nhẹ */
-.login-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+/* Container chính (Khung to) */
+.register-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 650px; /* Chiều cao cố định cho Desktop */
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Cắt các phần thừa */
+    display: flex;
 }
 
-/* Khung form */
+/* --- DESKTOP STYLE (> 900px) --- */
+
+/* Phần Ảnh (Background) */
+.image-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh phủ kín khung */
+}
+
+/* Lớp phủ mờ lên ảnh */
+.image-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Phần Form (Nổi lên trên ảnh ở Desktop) */
 .form-container {
-  background-color: rgba(223, 213, 213, 0.92);
-  padding: 40px 30px 60px;
-  border-radius: 15px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  margin-right: 61%;
-  width: 350px;
-  z-index: 2;
-  position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50px; /* Đặt bên trái */
+    transform: translateY(-50%);
+    width: 400px;
+    max-width: 90%;
+
+    /* Style Kính mờ màu đỏ */
+    background-color: rgba(168, 29, 29, 0.92); 
+    backdrop-filter: blur(5px);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
 }
 
 /* Tiêu đề */
 .form-container h2 {
-  font-family: 'Georgia', serif; 
-  font-weight: 700;
-  font-size: 26px;
-  color: #ff4040;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    font-family: 'Montserrat', serif; 
+    font-weight: 800;
+    font-size: 28px;
+    color: #fff; /* Màu chữ trắng trên nền đỏ */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Ô nhập */
+/* Input Group */
+.input-group {
+    margin-bottom: 12px;
+    position: relative;
+}
+
 .form-container input {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 8px;
-  outline: none;
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
 }
 
-/* Nút */
+/* Icon Mắt */
+.toggle-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+.toggle-icon:hover { color: #b91c1c; }
+
+/* Nút Đăng ký */
 .form-container button {
-  width: 100%;
-  background-color: #b91c1c;
-  color: white;
-  border: none;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 12px;
+    background-color: #5c0000; /* Đỏ đậm */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .form-container button:hover {
-  background-color: #991b1b;
+    background-color: #800000;
+    transform: translateY(-2px);
 }
 
-/* Link */
-.form-container p {
-  margin-top: 15px;
-  
-  color: rgb(252, 17, 17);
+/* Link chuyển trang */
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffcccc;
+}
+.login-link a {
+    color: #fff; text-decoration: underline; font-weight: 700;
 }
 
-.form-container a {
-  color: #ce1a1a;
-  text-decoration: underline;
-  font-weight: bold;
-}
+/* --- RESPONSIVE MOBILE (SỬA LỖI HIỂN THỊ) --- */
+@media (max-width: 900px) {
+    
+    /* 1. Reset Container thành cột dọc */
+    .register-container {
+        height: auto; /* Chiều cao tự động theo nội dung */
+        min-height: auto;
+        flex-direction: column; /* Xếp dọc */
+        background-color: #fff; /* Nền trắng */
+    }
 
-.form-container a:hover {
-  color: #500606;
+    /* 2. Phần ảnh nằm trên cùng */
+    .image-box {
+        position: relative; /* Không absolute nữa */
+        width: 100%;
+        height: 200px; /* Chiều cao cố định cho ảnh bìa */
+        order: 1; /* Hiển thị trước */
+    }
+
+    .image-box img {
+        border-radius: 20px 20px 0 0; /* Bo góc trên */
+    }
+
+    /* 3. Phần Form nằm dưới */
+    .form-container {
+        position: relative; /* Không absolute nữa */
+        top: auto; left: auto; 
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        order: 2; /* Hiển thị sau ảnh */
+        
+        /* Reset style cho nền trắng */
+        background-color: #fff; 
+        backdrop-filter: none;
+        border-radius: 0 0 20px 20px; /* Bo góc dưới */
+        padding: 30px 20px;
+        box-shadow: none;
+    }
+
+    /* 4. Đổi màu sắc cho phù hợp nền trắng */
+    .form-container h2 {
+        color: #b91c1c; /* Tiêu đề đỏ */
+        text-shadow: none;
+    }
+
+    .form-container input {
+        background: #f5f5f5; /* Input xám nhạt */
+        border: 1px solid #eee;
+    }
+
+    .form-container button {
+        background-color: #D88E2C; /* Nút màu cam giống ảnh bạn gửi */
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(216, 142, 44, 0.3);
+    }
+
+    .login-link {
+        color: #666;
+    }
+
+    .login-link a {
+        color: #D88E2C; /* Link màu cam */
+    }
 }
