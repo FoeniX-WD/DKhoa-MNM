@@ -19,9 +19,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PW }}
         # ⚠️ QUAN TRỌNG VỚI SOMEE:
         # Somee thường yêu cầu bỏ file vào thư mục trùng tên miền
         # Ví dụ: /www.lacoste-project.somee.com/
