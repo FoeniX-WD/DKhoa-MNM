@@ -1,0 +1,29 @@
+name: Deploy to Somee Hosting 🚀
+
+on:
+  # Chạy khi có code mới được push vào nhánh master (hoặc main)
+  push:
+    branches:
+      - master  # ⚠️ Kiểm tra xem nhánh chính của bạn là 'master' hay 'main' nhé!
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    # Bước 1: Lấy code mới nhất từ GitHub về máy chủ ảo
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    # Bước 2: Dùng FTP đẩy file sang Somee
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        # ⚠️ QUAN TRỌNG VỚI SOMEE:
+        # Somee thường yêu cầu bỏ file vào thư mục trùng tên miền
+        # Ví dụ: /www.lacoste-project.somee.com/
+        # Nếu để trống, nó sẽ chép vào thư mục gốc của tài khoản FTP.
+        server-dir: /
